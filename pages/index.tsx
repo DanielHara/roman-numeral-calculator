@@ -15,7 +15,7 @@ export default function Home() {
         <label htmlFor="number">
           Enter number here:
         </label>
-        <input id="number" name="number" type="number" onChange={handleChange}></input>
+        <input id="number" name="number" type="number" value={number || ''} onChange={handleChange}></input>
       </div>
       <div>
         <label htmlFor="roman">

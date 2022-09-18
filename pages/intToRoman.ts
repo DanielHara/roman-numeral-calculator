@@ -1,4 +1,9 @@
 export default function intToRoman(num: number) {
+  if (num > 1000 || num < 0) {
+    return 'Invalid input, set a number between 1 and 1000'
+  }
+
+
   let romanUnits = ''
   const units = num % 10;
 
