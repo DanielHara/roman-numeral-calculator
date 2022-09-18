@@ -30,6 +30,17 @@ describe('when user enters', () => {
     [9, 'IX'],
     [10, 'X'],
     [11, 'XI'],
+    [12, 'XII'],
+    [13, 'XIII'],
+    [14, 'XIV'],
+    [15, 'XV'],
+    [20, 'XX'],
+    [30, 'XXX'],
+    [40, 'XL'],
+    [41, 'XLI'],
+    [48, 'XLVIII'],
+    [49, 'XLIX'],
+    [50, 'L'],
   ])('%s, then %s is displayed', (integer, roman) => {
     render(<Calculator />);
 
