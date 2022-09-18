@@ -1,15 +1,29 @@
 export default function intToRoman(num: number) {
-  if (num <= 3) {
-    return 'I'.repeat(num);
+  let romanUnits = ''
+  const units = num % 10;
+
+  if (units <= 3) {
+    romanUnits = 'I'.repeat(units);
   }
 
-  if (num === 4) {
-    return 'IV';
+  if (units === 4) {
+    romanUnits = 'IV';
   }
 
-  if (num >= 5 && num < 9) {
-    return 'V'.concat('I'.repeat(num - 5))
+  if (units >= 5 && units < 9) {
+    romanUnits = 'V'.concat('I'.repeat(units - 5))
   }
 
-  return 'IX'
+  if (units === 9) {
+    romanUnits = 'IX'
+  }
+
+  let romanTenths = ''
+
+  const tenths = Math.trunc(num / 10);
+  if (tenths === 1) {
+    romanTenths = 'X'
+  }
+
+  return `${romanTenths}${romanUnits}`
 }
