@@ -49,5 +49,13 @@ export default function intToRoman(num: number) {
     romanHundreds = 'CD'
   }
 
+  if (hundreds >= 5 && hundreds < 9) {
+    romanHundreds = 'D'.concat('C'.repeat(hundreds - 5))
+  }
+
+  if (hundreds === 9) {
+    romanHundreds = 'CM'
+  }
+
   return `${romanHundreds}${romanTenths}${romanUnits}`
 }
