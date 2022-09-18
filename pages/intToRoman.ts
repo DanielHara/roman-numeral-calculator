@@ -7,7 +7,9 @@ export default function intToRoman(num: number) {
     return 'IV';
   }
 
-  if (num >= 5) {
+  if (num >= 5 && num < 9) {
     return 'V'.concat('I'.repeat(num - 5))
   }
+
+  return 'IX'
 }
