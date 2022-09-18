@@ -21,8 +21,16 @@ export default function intToRoman(num: number) {
   let romanTenths = ''
 
   const tenths = Math.trunc(num / 10);
-  if (tenths === 1) {
-    romanTenths = 'X'
+  if (tenths <= 3) {
+    romanTenths = 'X'.repeat(tenths)
+  }
+
+  if (tenths === 4) {
+    romanTenths = 'XL'
+  }
+
+  if (tenths === 5) {
+    romanTenths = 'L'
   }
 
   return `${romanTenths}${romanUnits}`
