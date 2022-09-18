@@ -25,7 +25,9 @@ describe('when user enters', () => {
     [4, 'IV'],
     [5, 'V'],
     [6, 'VI'],
-    [7, 'VII']
+    [7, 'VII'],
+    [8, 'VIII'],
+    [9, 'IX'],
   ])('%s, then %s is displayed', (integer, roman) => {
     render(<Calculator />);
 
