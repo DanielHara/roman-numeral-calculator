@@ -19,6 +19,7 @@ describe('rendering', () => {
 
 describe('when user enters', () => {
   it.each([
+    [-1, 'Invalid input, set a number between 1 and 1000'],
     [1, 'I'],
     [2, 'II'],
     [3, 'III'],
@@ -61,6 +62,7 @@ describe('when user enters', () => {
     [900, 'CM'],
     [994, 'CMXCIV'],
     [1000, 'M'],
+    [1001, 'Invalid input, set a number between 1 and 1000'],
   ])('%s, then %s is displayed', (integer, roman) => {
     render(<Calculator />);
 
