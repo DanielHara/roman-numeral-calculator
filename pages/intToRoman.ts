@@ -27,7 +27,7 @@ export default function intToRoman(num: number) {
 
   let romanHundreds = ''
 
-  const hundreds = Math.trunc(num / 100);
+  const hundreds = Math.trunc((num / 100) % 10);
 
   if (hundreds <= 3) {
     romanHundreds = 'C'.repeat(hundreds)
@@ -39,5 +39,12 @@ export default function intToRoman(num: number) {
     romanHundreds = 'CM'
   }
 
-  return `${romanHundreds}${romanTenths}${romanUnits}`
+  let romanThousands = ''
+  const thousands = Math.trunc((num / 1000) % 10);
+
+  if (thousands === 1) {
+    romanThousands = 'M'
+  }
+
+  return `${romanThousands}${romanHundreds}${romanTenths}${romanUnits}`
 }
