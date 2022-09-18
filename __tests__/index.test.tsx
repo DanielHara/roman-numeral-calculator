@@ -18,36 +18,22 @@ describe('rendering', () => {
 });
 
 describe('when user enters', () => {
-  it('1, then "I" is displayed', () => {
+  it.each([
+    [1, 'I'],
+    [2, 'II'],
+    [3, 'III'],
+    [4, 'IV'],
+    [5, 'V'],
+    [6, 'VI'],
+    [7, 'VII']
+  ])('%s, then %s is displayed', (integer, roman) => {
     render(<Calculator />);
 
     const input = screen.getByLabelText('Enter number here:');
 
-    fireEvent.change(input, { target: { value: 1 } });
+    fireEvent.change(input, { target: { value: integer } });
 
     const output = screen.getByLabelText('Roman number:');
-    expect(output).toHaveValue('I')
-  });
-
-  it('3, then "III" is displayed', () => {
-    render(<Calculator />);
-
-    const input = screen.getByLabelText('Enter number here:');
-
-    fireEvent.change(input, { target: { value: 3 } });
-
-    const output = screen.getByLabelText('Roman number:');
-    expect(output).toHaveValue('III')
-  });
-
-  it('4, then "IV" is displayed', () => {
-    render(<Calculator />);
-
-    const input = screen.getByLabelText('Enter number here:');
-
-    fireEvent.change(input, { target: { value: 4 } });
-
-    const output = screen.getByLabelText('Roman number:');
-    expect(output).toHaveValue('IV')
+    expect(output).toHaveValue(roman)
   });
 });
