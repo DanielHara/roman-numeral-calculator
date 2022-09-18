@@ -20,7 +20,7 @@ export default function intToRoman(num: number) {
 
   let romanTenths = ''
 
-  const tenths = Math.trunc(num / 10);
+  const tenths = Math.trunc((num / 10) % 10);
   if (tenths <= 3) {
     romanTenths = 'X'.repeat(tenths)
   }
@@ -37,5 +37,17 @@ export default function intToRoman(num: number) {
     romanTenths = 'XC'
   }
 
-  return `${romanTenths}${romanUnits}`
+  let romanHundreds = ''
+
+  const hundreds = Math.trunc(num / 100);
+
+  if (hundreds === 1) {
+    romanHundreds = 'C'
+  }
+  
+  if (hundreds === 2) {
+    romanHundreds = 'CC'
+  }
+
+  return `${romanHundreds}${romanTenths}${romanUnits}`
 }
