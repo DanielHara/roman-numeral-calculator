@@ -1,29 +1,34 @@
-# Next.js + Jest
+# Calculator from Integer to Roman
 
-This example shows how to configure Jest to work with Next.js.
+Input an integer from 1 to 1000, and get it in Roman notation.
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+The main Software Development principle employed was Test Driven Development (TDD): begin writing a failing test, develop your feature to make it pass,
+sometimes refactor, and repeat.
 
-## How to Use
+Also see it deployed at:
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
+https://roman-numeral-calculator-delta.vercel.app/
 
-In your terminal, run the following command:
+Begin by installing packages:
 
 ```bash
-npx create-next-app --example with-jest with-jest-app
+npm run install
 ```
 
+## To run in locally:
+
 ```bash
-yarn create next-app --example with-jest with-jest-app
+npm run dev
 ```
 
+## To run lint:
+
 ```bash
-pnpm create next-app --example with-jest with-jest-app
+npm run lint
 ```
 
-## Run Jest Tests
+## To run the tests:
 
 ```bash
-npm test
+npm run tests
 ```
