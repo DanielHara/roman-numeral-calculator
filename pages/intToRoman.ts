@@ -4,17 +4,11 @@ export default function intToRoman(num: number) {
 
   if (units <= 3) {
     romanUnits = 'I'.repeat(units);
-  }
-
-  if (units === 4) {
+  } else if (units === 4) {
     romanUnits = 'IV';
-  }
-
-  if (units >= 5 && units < 9) {
+  } else if (units < 9) {
     romanUnits = 'V'.concat('I'.repeat(units - 5))
-  }
-
-  if (units === 9) {
+  } else if (units === 9) {
     romanUnits = 'IX'
   }
 
@@ -23,17 +17,11 @@ export default function intToRoman(num: number) {
   const tenths = Math.trunc((num / 10) % 10);
   if (tenths <= 3) {
     romanTenths = 'X'.repeat(tenths)
-  }
-
-  if (tenths === 4) {
+  } else if (tenths === 4) {
     romanTenths = 'XL'
-  }
-
-  if (tenths >= 5 && tenths < 9) {
+  } else if (tenths < 9) {
     romanTenths = 'L'.concat('X'.repeat(tenths - 5))
-  }
-
-  if (tenths === 9) {
+  } else if (tenths === 9) {
     romanTenths = 'XC'
   }
 
@@ -43,17 +31,11 @@ export default function intToRoman(num: number) {
 
   if (hundreds <= 3) {
     romanHundreds = 'C'.repeat(hundreds)
-  }
-  
-  if (hundreds === 4) {
+  } else if (hundreds === 4) {
     romanHundreds = 'CD'
-  }
-
-  if (hundreds >= 5 && hundreds < 9) {
+  } else if (hundreds < 9) {
     romanHundreds = 'D'.concat('C'.repeat(hundreds - 5))
-  }
-
-  if (hundreds === 9) {
+  } else if (hundreds === 9) {
     romanHundreds = 'CM'
   }
 
