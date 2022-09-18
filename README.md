@@ -15,7 +15,7 @@ Begin by installing packages:
 npm run install
 ```
 
-## To run in locally:
+## To run locally:
 
 ```bash
 npm run dev
