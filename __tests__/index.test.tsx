@@ -1,14 +1,18 @@
-import { render, screen } from '@testing-library/react'
-import Home from '@/pages/index'
+import { render, screen } from '@testing-library/react';
+import Calculator from '@/pages/index';
 
-describe('Home', () => {
-  it('renders a heading', () => {
-    render(<Home />)
+describe('rendering', () => {
+  it('renders an input', () => {
+    render(<Calculator />);
+    const input = screen.getByLabelText('Enter number here:');
 
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
-    })
+    expect(input).toBeInTheDocument();
+  });
 
-    expect(heading).toBeInTheDocument()
-  })
-})
+  it('renders an output', () => {
+    render(<Calculator />);
+    const output = screen.getByLabelText('Roman number:');
+
+    expect(output).toBeInTheDocument();
+  });
+});
