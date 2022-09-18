@@ -39,4 +39,15 @@ describe('when user enters', () => {
     const output = screen.getByLabelText('Roman number:');
     expect(output).toHaveValue('III')
   });
+
+  it('4, then "IV" is displayed', () => {
+    render(<Calculator />);
+
+    const input = screen.getByLabelText('Enter number here:');
+
+    fireEvent.change(input, { target: { value: 4 } });
+
+    const output = screen.getByLabelText('Roman number:');
+    expect(output).toHaveValue('IV')
+  });
 });
