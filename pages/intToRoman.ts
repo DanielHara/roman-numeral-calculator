@@ -29,8 +29,12 @@ export default function intToRoman(num: number) {
     romanTenths = 'XL'
   }
 
-  if (tenths === 5) {
-    romanTenths = 'L'
+  if (tenths >= 5 && tenths < 9) {
+    romanTenths = 'L'.concat('X'.repeat(tenths - 5))
+  }
+
+  if (tenths === 9) {
+    romanTenths = 'XC'
   }
 
   return `${romanTenths}${romanUnits}`
