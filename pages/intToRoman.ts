@@ -41,12 +41,12 @@ export default function intToRoman(num: number) {
 
   const hundreds = Math.trunc(num / 100);
 
-  if (hundreds === 1) {
-    romanHundreds = 'C'
+  if (hundreds <= 3) {
+    romanHundreds = 'C'.repeat(hundreds)
   }
   
-  if (hundreds === 2) {
-    romanHundreds = 'CC'
+  if (hundreds === 4) {
+    romanHundreds = 'CD'
   }
 
   return `${romanHundreds}${romanTenths}${romanUnits}`
